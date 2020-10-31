@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+vector<long long>t;
+ 
+int main()
+{
+ios_base::sync_with_stdio(false);
+long long n,k;
+cin>>n>>k;
+for(long long i=1;i*i<=n;i++)
+if(n%i==0)
+{
+t.push_back(i);
+if(i*i!=n)
+t.push_back(n/i);
+}
+sort(t.begin(),t.end());
+if(t.size()<k)
+{
+cout<<-1<<endl;
+}
+else
+cout<<t[k-1]<<endl;
+return 0;
+}
